@@ -46,6 +46,6 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
   }
 
-console.log(createEmployee(200) instanceof Teacher);
-console.log(createEmployee(1000) instanceof Director);
-console.log(createEmployee('$500') instanceof Director); 
+console.log(createEmployee(200));
+console.log(createEmployee(1000));
+console.log(createEmployee('$500')); 
