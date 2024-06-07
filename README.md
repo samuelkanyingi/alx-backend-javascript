@@ -1,2 +1,1 @@
-0x00. ES6 Basics
-
+Repository for all javascript projects
