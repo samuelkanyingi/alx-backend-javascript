@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 class HolbertonCourse {
     constructor(name, length, students) {
         // Validate types
