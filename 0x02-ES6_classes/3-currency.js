@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 class Currency {
     constructor(code, name) {
         // Validate types
