@@ -1,67 +1,62 @@
 class HolbertonCourse {
-    constructor(name, length, students) {
-        // Validate types
-        this._validateName(name);
-        this._validateLength(length);
-        this._validateStudents(students);
+  constructor(name, length, students) {
+    // Assign attributes
+    this._name = name;
+    this._length = length;
+    this._students = students;
+  }
 
-        // Assign attributes
-        this._name = name;
-        this._length = length;
-        this._students = students;
-    }
+  // Getter for name
+  get name() {
+    return this._name;
+  }
 
-    // Getter for name
-    get name() {
-        return this._name;
-    }
+  // Setter for name
+  set name(newName) {
+    this._validateName(newName);
+    this._name = newName;
+  }
 
-    // Setter for name
-    set name(newName) {
-        this._validateName(newName);
-        this._name = newName;
-    }
+  // Getter for length
+  get length() {
+    return this._length;
+  }
 
-    // Getter for length
-    get length() {
-        return this._length;
-    }
+  // Setter for length
+  set length(newLength) {
+    this._validateLength(newLength);
+    this._length = newLength;
+  }
 
-    // Setter for length
-    set length(newLength) {
-        this._validateLength(newLength);
-        this._length = newLength;
-    }
+  // Getter for students
+  get students() {
+    return this._students;
+  }
 
-    // Getter for students
-    get students() {
-        return this._students;
-    }
+  // Setter for students
+  set students(newStudents) {
+    this._validateStudents(newStudents);
+    this._students = newStudents;
+  }
 
-    // Setter for students
-    set students(newStudents) {
-        this._validateStudents(newStudents);
-        this._students = newStudents;
+  // Validation methods
+  static _validateName(name) {
+    if (typeof name !== 'string') {
+      throw new TypeError('Name must be a string');
     }
+  }
 
-    // Validation methods
-    _validateName(name) {
-        if (typeof name !== 'string') {
-            throw new TypeError('Name must be a string');
-        }
+  static _validateLength(length) {
+    if (typeof length !== 'number') {
+      throw new TypeError('Length must be a number');
     }
+  }
 
-    _validateLength(length) {
-        if (typeof length !== 'number') {
-            throw new TypeError('Length must be a number');
-        }
+  static _validateStudents(students) {
+    if (!Array.isArray(students) || !students.every((student) => typeof student === 'string')) {
+      throw new TypeError('Students must be an array of strings');
     }
-
-    _validateStudents(students) {
-        if (!Array.isArray(students) || !students.every(student => typeof student === 'string')) {
-            throw new TypeError('Students must be an array of strings');
-        }
-    }
+  }
 }
 
 export default HolbertonCourse;
