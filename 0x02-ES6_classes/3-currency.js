@@ -37,7 +37,7 @@ class Currency {
   }
 
   // Validation method
- static _validateString(value, attributeName) {
+ _validateString(value, attributeName) {
     if (typeof value !== 'string') {
       throw new TypeError(`${attributeName} must be a string`);
     }
