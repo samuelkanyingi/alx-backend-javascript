@@ -6,6 +6,10 @@ const port = 1245;
 const databasePath = process.argv[2];
 
 const countStudents = (filePath) => new Promise((resolve, reject) => {
+  if (!filePath) {
+    reject(new Error('Cannot load the database'));
+    return;
+  }
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       reject(new Error('Cannot load the database'));
@@ -47,7 +51,7 @@ const app = http.createServer((req, res) => {
       .catch((error) => {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/plain');
-        res.end(`${error.message}\n`);
+        res.end(error.message);
       });
   } else {
     res.statusCode = 404;
