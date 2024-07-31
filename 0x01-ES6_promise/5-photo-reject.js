@@ -1,3 +1,4 @@
 export default function uploadPhoto(fileName) {
-  return Promise.reject(new Error(`${fileName} cannot be processed`));
+  return Promise.resolve({ status: 200, body: 'photo-profile-1' });
+  //return Promise.reject(new Error(`${fileName} cannot be processed`));
 }
